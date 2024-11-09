@@ -10,25 +10,33 @@ function PostFeed() {
     }, []);
 
     return (
-        <div>
+        <div style={styles.container}>
             <h2>게시물 피드</h2>
-            {posts.map(post => (
-                <div key={post.id} style={styles.post}>
-                    <h3>{post.content}</h3>
-                    <p>{post.location}</p>
-                    <button>쓰담쓰담</button>
-                    <button>댓글 달기</button>
-                </div>
-            ))}
+            <div style={styles.scrollableFeed}>
+                {posts.map(post => (
+                    <div key={post.postId} style={styles.post}>
+                        <h3>{post.content}</h3>
+                        <p>{post.location}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
 
 const styles = {
-    post: {
+    container: {
+        padding: '20px',
+    },
+    scrollableFeed: {
+        height: '400px', // 고정된 높이를 설정하여 스크롤 필요
+        overflowY: 'auto', // 세로 스크롤 활성화
         border: '1px solid #ddd',
         padding: '10px',
-        marginBottom: '10px',
+    },
+    post: {
+        borderBottom: '1px solid #ddd',
+        padding: '10px 0',
     },
 };
 

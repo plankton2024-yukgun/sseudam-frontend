@@ -3,26 +3,19 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Auth from './components/Auth';
 import HomePage from './components/HomePage';
 import PostFeed from './components/PostFeed';
-import PostDetail from './components/PostDetail';
-import UploadPost from './components/UploadPost';
 import UserPage from './components/UserPage';
 import Board from './components/Board';
-
 
 function App() {
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar /> {/* Navbar에 로고 포함 */}
         <Routes>
-          <Route path="/" element={<Auth />} />
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/posts" element={<PostFeed />} />
-          <Route path="/posts/:postId" element={<PostDetail />} />
-          <Route path="/upload" element={<UploadPost />} />
           <Route path="/user" element={<UserPage />} />
           <Route path="/board" element={<Board />} />
         </Routes>
@@ -33,3 +26,4 @@ function App() {
 }
 
 export default App;
+
