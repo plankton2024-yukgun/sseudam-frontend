@@ -92,3 +92,53 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   background-color: #f1f1f1;
 }
+
+/* src/App.css */
+body {
+  overflow-x: auto;
+  /* 필요할 때 가로 스크롤을 허용 */
+  min-width: unset;
+  /* 최소 너비 제한을 제거 */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    width: 10%;
+  }
+}
+
+/* src/App.css */
+body,
+html {
+  height: auto;
+  min-height: unset;
+  overflow-y: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+  min-height: unset;
+}
+
+@media (max-height: 600px) {
+  .container {
+    height: auto;
+  }
+}

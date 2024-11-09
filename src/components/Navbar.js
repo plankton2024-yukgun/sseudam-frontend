@@ -7,12 +7,7 @@ function Navbar() {
         <nav style={styles.navbar}>
             <img src={logo} alt="Logo" style={styles.logo} /> {/* 이미지 추가 */}
             <h1 style={styles.title}>한쓰담</h1>
-            <div style={styles.menu}>
-                <a href="/">홈</a>
-                <a href="/posts">피드</a>
-                <a href="/user">마이페이지</a>
-                <a href="/board">게시판</a>
-            </div>
+
         </nav>
     );
 }
